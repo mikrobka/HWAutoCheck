@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/HwAutoCheck/static/css/main.18f8ca56.css",
+    "main.js": "/HwAutoCheck/static/js/main.50288ac0.js",
+    "static/js/787.66cb4309.chunk.js": "/HwAutoCheck/static/js/787.66cb4309.chunk.js",
+    "static/media/avatar.png": "/HwAutoCheck/static/media/avatar.d947cb9d0d13765666b6.png",
+    "index.html": "/HwAutoCheck/index.html",
+    "main.18f8ca56.css.map": "/HwAutoCheck/static/css/main.18f8ca56.css.map",
+    "main.50288ac0.js.map": "/HwAutoCheck/static/js/main.50288ac0.js.map",
+    "787.66cb4309.chunk.js.map": "/HwAutoCheck/static/js/787.66cb4309.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18f8ca56.css",
+    "static/js/main.50288ac0.js"
+  ]
+}
