@@ -3,7 +3,7 @@ import Affairs from './affairs/Affairs'
 import s2 from '../../s1-main/App.module.css'
 
 /*
-* 1 - описать типы AffairPriorityType, AffairType  done
+* 1 - описать типы AffairPriorityType, AffairType
 * 2 - указать нужный тип для defaultAffairs
 * 3 - дописать типы и логику функции filterAffairs и проверить её тестами
 * 4 - выполнить пункт 3 для функции deleteAffair
@@ -17,7 +17,7 @@ import s2 from '../../s1-main/App.module.css'
 * */
 
 // types
-export type AffairPriorityType = "low" | "middle" | "high" // need to fix any
+export type AffairPriorityType = 'low'| 'middle'| 'high' // need to fix any
 export type AffairType = {
     _id: number // need to fix any
     name: string // need to fix any
@@ -26,7 +26,7 @@ export type AffairType = {
 export type FilterType = 'all' | AffairPriorityType
 
 // constants
-const defaultAffairs: AffairType[] = [ // need to fix any
+const defaultAffairs: any = [ // need to fix any
     {_id: 1, name: 'React', priority: 'high'}, // студенты могут изменить содержимое name и количество элементов в массиве, ...priority не менять!
     {_id: 2, name: 'anime', priority: 'low'},
     {_id: 3, name: 'games', priority: 'low'},
@@ -35,16 +35,16 @@ const defaultAffairs: AffairType[] = [ // need to fix any
 ]
 
 // pure helper functions
-export const filterAffairs = (affairs: AffairType[], filter: 'all'): AffairType[] => { // need to fix any
-    if (filter === 'all') {
-        return affairs
-    } else {
-        return affairs.filter(a => a.priority === filter)
-    }
-
+export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] => { // need to fix any
+        if(filter === 'all'){
+            return affairs
+        }else{
+            return affairs.filter(a => a.priority === filter)
+        }
 }
 export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] => { // need to fix any
-    return affairs.filter(a => a._id !== _id) // need to fix
+
+    return affairs.filter(d => d._id !== _id) // need to fix
 }
 
 function HW2() {
@@ -53,7 +53,7 @@ function HW2() {
 
     const filteredAffairs = filterAffairs(affairs, filter)
     const deleteAffairCallback = (_id: number) => { // need to fix any
-        setAffairs(affairs.filter((a) => a._id !== _id))
+        setAffairs(deleteAffair(affairs,_id))
     }
 
     return (
