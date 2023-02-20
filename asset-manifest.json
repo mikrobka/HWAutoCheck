@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/HwAutoCheck/static/css/main.f7c02d52.css",
-    "main.js": "/HwAutoCheck/static/js/main.30c779f5.js",
+    "main.js": "/HwAutoCheck/static/js/main.06dc9e84.js",
     "static/js/787.66cb4309.chunk.js": "/HwAutoCheck/static/js/787.66cb4309.chunk.js",
     "static/media/avatar.png": "/HwAutoCheck/static/media/avatar.d947cb9d0d13765666b6.png",
     "index.html": "/HwAutoCheck/index.html",
     "main.f7c02d52.css.map": "/HwAutoCheck/static/css/main.f7c02d52.css.map",
-    "main.30c779f5.js.map": "/HwAutoCheck/static/js/main.30c779f5.js.map",
+    "main.06dc9e84.js.map": "/HwAutoCheck/static/js/main.06dc9e84.js.map",
     "787.66cb4309.chunk.js.map": "/HwAutoCheck/static/js/787.66cb4309.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f7c02d52.css",
-    "static/js/main.30c779f5.js"
+    "static/js/main.06dc9e84.js"
   ]
 }
