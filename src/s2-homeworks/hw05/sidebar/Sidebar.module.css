@@ -19,8 +19,8 @@ z-index: 2;
 }
 
 .nav {
-
-
+    display: grid;
+    gap: 30px ;
     width: 138px;
     height: 27px;
     font-family: 'Montserrat';
