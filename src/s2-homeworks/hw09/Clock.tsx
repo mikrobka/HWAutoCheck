@@ -35,13 +35,15 @@ function Clock() {
     let hours = date.getHours()
     let minutes = date.getMinutes()
     let seconds = date.getSeconds()
-    let day = date.getDay()
+    let day = date.getDate()
     let month = date.getMonth()
     let year = date.getFullYear()
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Tuesday", "Friday", "Saturday"];
+    const monthesOfYear = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    const monthOfYear = monthesOfYear[date.getMonth()]
     const dayOfWeek = daysOfWeek[date.getDay()];
     const stringTime = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}` ||   <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = `${dayOfWeek}` || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const stringDate = `${monthOfYear}` || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     const stringDay = `${dayOfWeek}` ||  <br/> // пишут студенты
     const stringMonth = `${day < 10 ? `0${day}` : day}.${month < 10 ? `0${month}`: month}.${year} ` || <br/> // пишут студенты
