@@ -12,6 +12,7 @@ function Clock() {
     const start = () => {
         let newTimer = setInterval(() =>setDate(new Date(restoreState("hs9-date", Date.now()))),1000)
         setTimerId(+newTimer)
+
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
 
@@ -39,7 +40,7 @@ function Clock() {
     let year = date.getFullYear()
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Tuesday", "Friday", "Saturday"];
     const dayOfWeek = daysOfWeek[date.getDay()];
-    const stringTime = `${hours}:${minutes}:${seconds < 10 ? `0${seconds}` : seconds}` ||   <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    const stringTime = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}` ||   <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     const stringDate = `${dayOfWeek}` || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     const stringDay = `${dayOfWeek}` ||  <br/> // пишут студенты
@@ -77,14 +78,14 @@ function Clock() {
             <div className={s.buttonsContainer}>
                 <SuperButton
                     id={'hw9-button-start'}
-                    disabled={false} // пишут студенты // задизэйблить если таймер запущен
+                    disabled={timerId ? true : false} // пишут студенты // задизэйблить если таймер запущен
                     onClick={start}
                 >
                     start
                 </SuperButton>
                 <SuperButton
                     id={'hw9-button-stop'}
-                    disabled={false} // пишут студенты // задизэйблить если таймер не запущен
+                    disabled={timerId ?false : true } // пишут студенты // задизэйблить если таймер не запущен
                     onClick={stop}
                 >
                     stop
