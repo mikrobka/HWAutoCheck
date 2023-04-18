@@ -10,8 +10,10 @@ function Clock() {
     const [date, setDate] = useState<Date>(new Date(restoreState('hw9-date', Date.now())))
     const [show, setShow] = useState<boolean>(false)
     const start = () => {
-        let newTimer = setInterval(() =>setDate(new Date(restoreState("hs9-date", Date.now()))),1000)
-        setTimerId(+newTimer)
+        const id = setInterval(() => {
+            setDate(new Date())
+        }, 1000)
+        setTimerId(+id)
 
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
@@ -32,21 +34,33 @@ function Clock() {
         setShow(false)
     }
 
-    let hours = date.getHours()
-    let minutes = date.getMinutes()
-    let seconds = date.getSeconds()
-    let day = date.getDate()
-    let month = date.getMonth()
-    let year = date.getFullYear()
-    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Tuesday", "Friday", "Saturday"];
-    const monthesOfYear = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    const monthOfYear = monthesOfYear[date.getMonth()]
-    const dayOfWeek = daysOfWeek[date.getDay()];
-    const stringTime = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}` ||   <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = `${monthOfYear}` || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const getTimeString = (date: Date): string => {
+        const hours = date.getHours().toString().padStart(2, '0')
+        const minutes = date.getMinutes().toString().padStart(2, '0')
+        const seconds = date.getSeconds().toString().padStart(2, '0')
+        return `${hours}:${minutes}:${seconds}`
+    }
+    const getDateString = (date: Date): string => {
+        const day = date.getDate().toString().padStart(2, '0')
+        const month = (date.getMonth() + 1).toString().padStart(2, '0')
+        const year = date.getFullYear().toString()
+        return `${day}.${month}.${year}`
+    }
+    const getDayString = (date: Date): string => {
+        const formatter = new Intl.DateTimeFormat('en-US', { weekday: 'long' })
+        return formatter.format(date)
+    }
+
+
+    const stringmonth = new Intl.DateTimeFormat('en-US', {
+        month: 'long'
+    }).format(date);
+
+    const stringTime = getTimeString(date) ||   <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    const stringDate = getDateString(date) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
-    const stringDay = `${dayOfWeek}` ||  <br/> // пишут студенты
-    const stringMonth = `${day < 10 ? `0${day}` : day}.${month < 10 ? `0${month}`: month}.${year} ` || <br/> // пишут студенты
+    const stringDay = getDayString(date) ||  <br/> // пишут студенты
+    const stringMonth = stringmonth || <br/> // пишут студенты
 
     return (
         <div className={s.clock}>
@@ -66,8 +80,8 @@ function Clock() {
                 <div className={s.more}>
                     {show ? (
                         <>
-                            <span id={'hw9-month'}>{stringMonth}</span>,{' '}
-                            <span id={'hw9-date'}>{stringDate}</span>
+                            <span id={'hw9-month'}>{`${stringMonth}`}</span>,
+                            <span id={'hw9-date'}>{stringDate}</span>,
                         </>
                     ) : (
                         <>
