@@ -1,16 +1,16 @@
-[data-theme='1'] {
-    --color: #000000;
-    --background: #FFFFFF;
+[data-theme='blue'] {
+    --color: blue;
+    --background: #0029cc;
 }
 
-[data-theme='2'] {
-    --color: #000000;
-    --background: #DDEEFF;
+[data-theme='red'] {
+    --color: #793455;
+    --background: #793455;
 }
 
-[data-theme='3'] {
-    --color: #FFFFFF;
-    --background: #212A34;
+[data-theme='green'] {
+    --color: #83b075;
+    --background:  #83b075;
 }
 
 html {
