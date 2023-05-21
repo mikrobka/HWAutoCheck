@@ -55,6 +55,7 @@ const HW14 = () => {
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
+        debugger
         sendQuery(params.find || '')
         setFind(params.find || '')
     }, [searchParams])
