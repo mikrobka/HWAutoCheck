@@ -58,7 +58,7 @@ const HW14 = () => {
         debugger
         sendQuery(params.find || '')
         setFind(params.find || '')
-    }, [searchParams])
+    }, [])
 
     const mappedTechs = techs.map(t => (
         <div key={t} id={'hw14-tech-' + t} className={s.tech}>
