@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/HwAutoCheck/static/css/main.52a1382f.css",
-    "main.js": "/HwAutoCheck/static/js/main.2e5bb0fe.js",
+    "main.css": "/HwAutoCheck/static/css/main.aaf95ca1.css",
+    "main.js": "/HwAutoCheck/static/js/main.36417886.js",
     "static/js/787.66cb4309.chunk.js": "/HwAutoCheck/static/js/787.66cb4309.chunk.js",
     "static/media/avatar.png": "/HwAutoCheck/static/media/avatar.d947cb9d0d13765666b6.png",
     "static/media/200.svg": "/HwAutoCheck/static/media/200.96248f7df0dde10e0a82ac30418f50bc.svg",
@@ -14,12 +14,13 @@
     "static/media/checked.svg": "/HwAutoCheck/static/media/checked.b75ca55e8759862b4083.svg",
     "index.html": "/HwAutoCheck/index.html",
     "static/media/burger.svg": "/HwAutoCheck/static/media/burger.700e416f7bfe3697f96b36c778d25355.svg",
-    "main.52a1382f.css.map": "/HwAutoCheck/static/css/main.52a1382f.css.map",
-    "main.2e5bb0fe.js.map": "/HwAutoCheck/static/js/main.2e5bb0fe.js.map",
+    "static/media/sort.svg": "/HwAutoCheck/static/media/sort.f9e5fa61787b66d42187a9f2e9a59ad9.svg",
+    "main.aaf95ca1.css.map": "/HwAutoCheck/static/css/main.aaf95ca1.css.map",
+    "main.36417886.js.map": "/HwAutoCheck/static/js/main.36417886.js.map",
     "787.66cb4309.chunk.js.map": "/HwAutoCheck/static/js/787.66cb4309.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.52a1382f.css",
-    "static/js/main.2e5bb0fe.js"
+    "static/css/main.aaf95ca1.css",
+    "static/js/main.36417886.js"
   ]
 }
