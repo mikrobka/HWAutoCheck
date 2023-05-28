@@ -1,17 +1,27 @@
 .loader {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border-top: 2px dotted #605f5f;
-    border-right: 3px dotted #232323;
-    border-bottom: 4px dotted black;
-    z-index: 1001;
-    animation: loader-rotate 3s infinite linear;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-@keyframes loader-rotate {
-    100%{
+.loader path {
+    fill: #ABB7E0;
+}
+.loader path:first-child{
+    fill: #ffffff;
+}
+.loader svg{
+    animation: rotate 1s steps(12, end) infinite;
+}
+
+@keyframes rotate{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
         transform: rotate(360deg);
     }
 }
-

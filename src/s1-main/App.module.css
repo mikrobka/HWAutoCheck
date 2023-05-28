@@ -1,25 +1,22 @@
 .App {
-    --header_height: 60px;
+    max-width: 1180px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
 }
 
 .hw {
-    width: 1280px;
-    height: 336px;
-    margin-top: 42px;
-    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    /*gap: 15px;*/
 }
 
 .hwTitle {
-    width: 200px;
-    height: 27px;
-    margin-left: 70px;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 600;
+    margin-bottom: 30px;
+    margin-top: 47px;
+    font-family:'Montserrat', sans-serif;
     font-size: 22px;
+    font-weight: 600;
     line-height: 27px;
-    color: var(--color);
+
 }

@@ -1,19 +1,15 @@
-import {AppStoreType} from "./store";
-
-const initState:InitialStateType = {
+const initState = {
     isLoading: false,
 }
-
-type InitialStateType = {
-    isLoading:boolean
+type LoadingStateType = {
+    isLoading: boolean
 }
 
-export const loadingReducer = (state = initState, action: LoadingActionType):InitialStateType => { // fix any
+export const loadingReducer = (state = initState, action: LoadingActionType): LoadingStateType => { // fix any
     switch (action.type) {
         // пишет студент  // need to fix
-        case 'CHANGE_LOADING':
-        return {...state,isLoading:action.isLoading}
-
+        case "CHANGE_LOADING":
+            return {...state, isLoading: action.isLoading}
         default:
             return state
     }

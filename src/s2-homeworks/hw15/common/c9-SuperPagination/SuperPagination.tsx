@@ -2,7 +2,6 @@ import React from 'react'
 import SuperSelect from '../../../hw07/common/c5-SuperSelect/SuperSelect'
 import {Pagination} from '@mui/material'
 import s from './SuperPagination.module.css'
-import {log} from "util";
 
 export type SuperPaginationPropsType = {
     id?: string
@@ -20,10 +19,7 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
     const lastPage = Math.ceil(totalCount / itemsCountForPage) // пишет студент // вычислить количество страниц
 
     const onChangeCallback = (event: any, page: number) => {
-        let el = event.currentTarget.ariaLabel
-        let num = parseInt(el.match(/\d+/))
-        onChange(page,itemsCountForPage)
-
+        onChange(page, itemsCountForPage)
         // пишет студент
     }
 

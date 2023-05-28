@@ -1,104 +1,70 @@
 .greetingForm {
-    /*position: absolute;*/
-    width: 100%;
-    height: 350px;
-    padding-top: 40px;
-    /* margin-top: 750px;*/
-    border-top: 2px solid #918e8e;
-    border-bottom: 2px solid #918e8e;
-
+    margin-bottom: 200px;
 }
 
 .inputAndButtonContainer {
     display: flex;
-    margin-top: 9px;
-    flex-direction: row;
     gap: 12px;
-
 }
 
 .error {
-    color: #cc0000;
-    font-weight: bold ;
+    font-weight: 600;
+    font-size: 14px;
+    color: red;
 }
 
 .input {
+    font-size: 16px;
     width: 372px;
     height: 36px;
-    left: 70px;
-    top: 1020px;
-
+    border-radius: 5px;
+    border: 1px solid #D1D1D1;
+    outline: none;
 }
 
 .input:focus {
     width: 372px;
     height: 36px;
-    border: 2px solid #19c9c9;
 }
 
 .errorInput {
     width: 372px;
     height: 36px;
-    background-color: #8b8e91;
-
+    border-radius: 5px;
+    border: 2px solid red;
 }
 
 .button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 24px;
-    gap: 10px;
-
     width: 78px;
     height: 36px;
-    left: 454px;
-    top: 1020px;
-
     background: #0066CC;
-    border-radius: 3px;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    color: #FFFFFF;
-
+    border-radius: 5px;
+    color: white;
 }
 
 .button:focus {
-    box-shadow:  5px 5px 5px 0px rgba(0, 206, 209, 1);
-    border: transparent;
 
 }
 
 .button:active {
-    background-color: darkturquoise;
-    border: transparent;
+    outline: none;
+    border: none;
 }
 
 .button:disabled {
-    background-color: #90b2d5;
-
-
+    background: #0066CC;
+    opacity: 0.5;
 }
 
 .text {
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    color: rgba(0, 0, 0, 0.5);
+    color: gray;
+    margin-bottom: 5px;
 }
 
 .greeting {
-    margin-top: 15px;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
+    font-family:'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
     line-height: 17px;
-    color: #50ea1d;
+    margin-top: 5px;
 }

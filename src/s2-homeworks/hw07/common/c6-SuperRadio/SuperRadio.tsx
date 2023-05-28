@@ -5,7 +5,6 @@ import React, {
     HTMLAttributes,
 } from 'react'
 import s from './SuperRadio.module.css'
-import {log} from "util";
 
 type DefaultRadioPropsType = DetailedHTMLProps<
     InputHTMLAttributes<HTMLInputElement>,
@@ -36,13 +35,14 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
     ...restProps
 }) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        onChange?.(e)
-        onChangeOption?.(e.currentTarget.value)
-        debugger
+        if (onChangeOption){
+            onChangeOption(e.currentTarget.value)
+        }
     }
 
     const finalRadioClassName = s.radio + (className ? ' ' + className : '')
     const spanClassName = s.span + (spanProps?.className ? ' ' + spanProps.className : '')
+
     const mappedOptions: any[] = options
         ? options.map((o) => (
               <label key={name + '-' + o.id} className={s.label}>
@@ -50,10 +50,14 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
                       id={id + '-input-' + o.id}
                       className={finalRadioClassName}
                       type={'radio'}
-                        name={name}
-                      checked={o.id == value}
+                      // name, +
+                      // checked,
+                      // value делают студенты
+
                       value={o.id}
-                      // name, checked, value делают студенты
+                      checked={o.id == value}
+
+                      name={name}
                       onChange={onChangeCallback}
                       {...restProps}
                   />
@@ -67,6 +71,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
               </label>
           ))
         : []
+
     return <div className={s.options}>{mappedOptions}</div>
 }
 
